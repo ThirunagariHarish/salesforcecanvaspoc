@@ -22,13 +22,13 @@
 	
 }
 );
-
+function publish() {
 Sfdc.canvas(function() {
     sr = JSON.parse('<%=signedRequestJson%>');
     Sfdc.canvas.client.publish(sr.client,
         {name : "statusChanged", payload : {status : 'Attached Properties to Opportunity'}});
 });
-
+}
 </
 script
 >
@@ -51,7 +51,7 @@ script
 				<option>Property 5</option>
 			</select>
 		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" onclick="publish()"class="btn btn-primary">Submit</button>
 	</form>
 </body>
 </html>
