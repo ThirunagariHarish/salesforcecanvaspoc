@@ -25,111 +25,164 @@ POSSIBILITY OF SUCH DAMAGE.
 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Salesforce Canvas SDK</title>
-        <style type="text/css" media="screen">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<title>Salesforce Canvas SDK</title>
+<style type="text/css" media="screen">
 body {
-    margin: 0;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 10px;
-    background-color: #FFFFFF;
-    font-family: "Arial", "Helvetica", "sans-serif";
-    font-size: 75%;
-    color: #222222
+	margin: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 10px;
+	background-color: #FFFFFF;
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 75%;
+	color: #222222
 }
 
 h1 {
-    font-size: 28px;
-    color: #000
+	font-size: 28px;
+	color: #000
 }
 
 #page {
-    background-color: #FFFFFF;
-    width: 800px;
-    margin: 0;
-    margin-left: 0;
-    margin-right: 0
+	background-color: #FFFFFF;
+	width: 800px;
+	margin: 0;
+	margin-left: 0;
+	margin-right: 0
 }
 
 #content {
-    float: left;
-    background-color: white;
-    border: 3px solid #aaa;
-    padding: 25px;
-    width: 700px
+	float: left;
+	background-color: white;
+	border: 3px solid #aaa;
+	padding: 25px;
+	width: 700px
 }
 
 #header {
-    padding-left: 75px;
-    padding-right: 30px
+	padding-left: 75px;
+	padding-right: 30px
 }
 
 #header h1, #header h2 {
-    margin: 0
+	margin: 0
 }
 
 #canvas-content {
-    border-top: 1px solid #ccc;
-    margin-top: 20px;
-    padding-top: 0
+	border-top: 1px solid #ccc;
+	margin-top: 20px;
+	padding-top: 0
 }
 
 #footer {
-    clear: both
+	clear: both
 }
 
 #header {
-    background-image: url("/images/java.png");
-    background-repeat: no-repeat;
-    background-position: top left;
-    height: 64px
+	background-image: url("/images/java.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+	height: 64px
 }
 
 #canvas-content h1 {
-    margin: 0;
-    font-size: 20px
+	margin: 0;
+	font-size: 20px
 }
 
 #canvas-content h2 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: normal;
-    color: #333;
-    margin-bottom: 25px
+	margin: 0;
+	font-size: 14px;
+	font-weight: normal;
+	color: #333;
+	margin-bottom: 25px
 }
 
-#canvas-content a
-{
-    color: #333;
-    text-decoration: none;
+#canvas-content a {
+	color: #333;
+	text-decoration: none;
+}
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
 }
 
-#canvas-content a:hover
-{
-    color: #199BD2;
-    text-decoration: none;
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
 }
-        </style>
-    </head>
-    <body>
-      <div id="page">
-        <div id="content">
-          <div id="header">
-            <h1>Welcome to Canvas SDK</h1>
-          </div>
-          <div id="canvas-content">
-              <h2>
-                  <br/>
-                  Your sample Java application is up and running.
-                  <p/>
-                  For more information on Salesforce Canvas Framework, please visit
-                  our <a target="_blank" title="Developer Documentation" href="http://developer.force.com"><strong>developer documentation.</strong></a>
-              </h2>
-          </div>
-        </div>
-      `
-        <div id="footer">&nbsp;</div>
-      </div>
-    </body>
- </html>
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+#canvas-content a:hover {
+	color: #199BD2;
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+<div class="main">
+  
+  <!-- Actual search box -->
+  <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
+  
+  <!-- Another variation with a button -->
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search this blog">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+  
+  <p class="mt-4 text-center"><a href="https://www.gungorbudak.com/blog/2018/12/12/bootstrap-4-search-box-with-search-icon/">See how it's done on my blog</a></p>
+  
+</div>
+	<div id="page">
+		<div id="content">
+			<div id="header">
+				<h1>Welcome to Canvas SDK</h1>
+			</div>
+
+			<div id="canvas-content">
+				<!-- Search form -->
+			
+				<h2>
+					<br /> Your sample Java application is up and running.
+					<p />
+					For more information on Salesforce Canvas Framework, please visit
+					our <a target="_blank" title="Developer Documentation"
+						href="http://developer.force.com"><strong>developer
+							documentation.</strong></a>
+				</h2>
+			</div>
+		</div>
+		`
+		<div id="footer">&nbsp;</div>
+	</div>
+</body>
+</html>
