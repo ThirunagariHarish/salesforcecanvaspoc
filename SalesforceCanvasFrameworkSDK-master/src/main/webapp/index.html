@@ -33,19 +33,10 @@
 
 </body>
 <script >
-	Sfdc.canvas(function() { // Save the token
-		Sfdc.canvas.oauth.token(window.signedRequestJson.oauthToken);
-		window
-				.alert("hello, "
-						+ window.signedRequestJson.context.user.fullName);
-
-	});
-</script>
-<script >
 	function callSendEvent() {
 		Sfdc.canvas(function() {
-			sr = JSON.parse('<%=signedRequestJson%>');
-			Sfdc.canvas.client.publish(sr.client, {
+			var srClient = signedRequest.client;
+			Sfdc.canvas.client.publish(srClient, {
 				name : "statusChanged",
 				payload : {
 					status : 'Attached Properties to Opportunity'
