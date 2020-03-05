@@ -1,188 +1,38 @@
-<!--
-Copyright (c) 2011, salesforce.com, inc.
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided
-that the following conditions are met:
-
-   Redistributions of source code must retain the above copyright notice, this list of conditions and the
-   following disclaimer.
-
-   Redistributions in binary form must reproduce the above copyright notice, this list of conditions and
-   the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-   Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or
-   promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
-WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
--->
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<title>Salesforce Canvas SDK</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<title>Attach Properties</title>
 <style type="text/css" media="screen">
-body {
-	margin: 0;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 10px;
-	background-color: #FFFFFF;
-	font-family: "Arial", "Helvetica", "sans-serif";
-	font-size: 75%;
-	color: #222222
-}
-
-h1 {
-	font-size: 28px;
-	color: #000
-}
-
-#page {
-	background-color: #FFFFFF;
-	width: 800px;
-	margin: 0;
-	margin-left: 0;
-	margin-right: 0
-}
-
-#content {
-	float: left;
-	background-color: white;
-	border: 3px solid #aaa;
-	padding: 25px;
-	width: 700px
-}
-
-#header {
-	padding-left: 75px;
-	padding-right: 30px
-}
-
-#header h1, #header h2 {
-	margin: 0
-}
-
-#canvas-content {
-	border-top: 1px solid #ccc;
-	margin-top: 20px;
-	padding-top: 0
-}
-
-#footer {
-	clear: both
-}
-
-#header {
-	background-image: url("/images/java.png");
-	background-repeat: no-repeat;
-	background-position: top left;
-	height: 64px
-}
-
-#canvas-content h1 {
-	margin: 0;
-	font-size: 20px
-}
-
-#canvas-content h2 {
-	margin: 0;
-	font-size: 14px;
-	font-weight: normal;
-	color: #333;
-	margin-bottom: 25px
-}
-
-#canvas-content a {
-	color: #333;
-	text-decoration: none;
-}
-/* Styles for wrapping the search box */
-
-.main {
-    width: 50%;
-    margin: 50px auto;
-}
-
-/* Bootstrap 4 text input with search icon */
-
-.has-search .form-control {
-    padding-left: 2.375rem;
-}
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-}
-
-#canvas-content a:hover {
-	color: #199BD2;
-	text-decoration: none;
-}
 </style>
 </head>
 <body>
-<div class="main">
-  
-  <!-- Actual search box -->
-  <div class="form-group has-search">
-    <span class="fa fa-search form-control-feedback"></span>
-    <input type="text" class="form-control" placeholder="Search">
-  </div>
-  
-  <!-- Another variation with a button -->
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search this blog">
-    <div class="input-group-append">
-      <button class="btn btn-secondary" type="button">
-        <i class="fa fa-search"></i>
-      </button>
-    </div>
-  </div>
-  
-  <p class="mt-4 text-center"><a href="https://www.gungorbudak.com/blog/2018/12/12/bootstrap-4-search-box-with-search-icon/">See how it's done on my blog</a></p>
-  
-</div>
-	<div id="page">
-		<div id="content">
-			<div id="header">
-				<h1>Welcome to Canvas SDK</h1>
-			</div>
-
-			<div id="canvas-content">
-				<!-- Search form -->
-			
-				<h2>
-					<br /> Your sample Java application is up and running.
-					<p />
-					For more information on Salesforce Canvas Framework, please visit
-					our <a target="_blank" title="Developer Documentation"
-						href="http://developer.force.com"><strong>developer
-							documentation.</strong></a>
-				</h2>
-			</div>
+	<form>
+		<div class="form-group">
+			<h1>Select Properties that need to be attached to the
+				opportunity</h1>
 		</div>
-		`
-		<div id="footer">&nbsp;</div>
-	</div>
+		<div class="form-group">
+			<label for="exampleFormControlSelect2">Example multiple
+				select</label> <select multiple class="form-control"
+				id="exampleFormControlSelect2">
+				<option>Property 1</option>
+				<option>Property 2</option>
+				<option>Property 3</option>
+				<option>Property 4</option>
+				<option>Property 5</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
 </body>
 </html>
