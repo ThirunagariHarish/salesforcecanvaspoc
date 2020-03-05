@@ -3,44 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <title>Attach Properties</title>
-<script type ="text/javascript" src ="https: //.salesforce.com
-	/canvas/sdk/js/36.0 /canvas-all.js ">
-
-    Sfdc.canvas (function() { // Save the token
-	Sfdc.canvas.oauth.token(window.signedRequestJson.oauthToken);window
-	.alert("hello, " + window.signedRequestJson.context.user.fullName);
-	
-}
-);
-
-function callSendEvent() {
-		Sfdc.canvas(function() {
-    			sr = JSON.parse('<%=signedRequestJson%>');
-    			Sfdc.canvas.client.publish(sr.client,
-        			{name : "statusChanged", payload : {status : 'Attached Properties to Opportunity'}});
-					});
-				}
-</script>
 </head>
 <body>
-
-		<div class="form-group">
-			<h1>Select Properties that need to be attached to the
-				opportunity</h1>
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlSelect2">Example multiple
-				select</label> <select multiple class="form-control"
-				id="exampleFormControlSelect2">
-				<option>Property 1</option>
-				<option>Property 2</option>
-				<option>Property 3</option>
-				<option>Property 4</option>
-				<option>Property 5</option>
-			</select>
-		</div>
-		<button onclick="callSendEvent()"class="btn btn-primary">Submit</button>
+	<div class="form-group">
+		<h1>Select Properties that need to be attached to the opportunity</h1>
+	</div>
+	<div class="form-group">
+		<label for="exampleFormControlSelect2">Example multiple select</label>
+		<select multiple class="form-control" id="exampleFormControlSelect2">
+			<option>Property 1</option>
+			<option>Property 2</option>
+			<option>Property 3</option>
+			<option>Property 4</option>
+			<option>Property 5</option>
+		</select>
+	</div>
+	<button onclick="callSendEvent()" class="btn btn-primary">Submit</button>
 
 </body>
+<script type="text/javascript"
+	src="https: //.salesforce.com
+	/canvas/sdk/js/36.0 /canvas-all.js ">
+	Sfdc.canvas(function() { // Save the token
+		Sfdc.canvas.oauth.token(window.signedRequestJson.oauthToken);
+		window
+				.alert("hello, "
+						+ window.signedRequestJson.context.user.fullName);
+
+	});
+
+	function callSendEvent() {
+		Sfdc.canvas(function() {
+			sr = JSON.parse('<%=signedRequestJson%>');
+			Sfdc.canvas.client.publish(sr.client, {
+				name : "statusChanged",
+				payload : {
+					status : 'Attached Properties to Opportunity'
+				}
+			});
+		});
+	}
+</script>
 </html>
