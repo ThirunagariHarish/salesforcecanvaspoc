@@ -22,6 +22,7 @@
 	
 }
 );
+
 function publish() {
 Sfdc.canvas(function() {
     sr = JSON.parse('<%=signedRequestJson%>');
@@ -35,7 +36,7 @@ script
 </style>
 </head>
 <body>
-	<form action="/submitted.html" method="POST">
+	<form >
 		<div class="form-group">
 			<h1>Select Properties that need to be attached to the
 				opportunity</h1>
