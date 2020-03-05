@@ -23,7 +23,7 @@
 }
 );
 
-function publish() {
+function callSendEvent() {
 Sfdc.canvas(function() {
     sr = JSON.parse('<%=signedRequestJson%>');
     Sfdc.canvas.client.publish(sr.client,
@@ -52,7 +52,7 @@ script
 				<option>Property 5</option>
 			</select>
 		</div>
-		<button onclick="publish()"class="btn btn-primary">Submit</button>
+		<button onclick="callSendEvent()"class="btn btn-primary">Submit</button>
 	</form>
 </body>
 </html>
