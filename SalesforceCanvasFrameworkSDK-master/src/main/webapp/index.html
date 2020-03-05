@@ -26,7 +26,7 @@ function publish() {
 Sfdc.canvas(function() {
     sr = JSON.parse('<%=signedRequestJson%>');
     Sfdc.canvas.client.publish(sr.client,
-        {name : "c.statusChanged", payload : {status : 'Attached Properties to Opportunity'}});
+        {name : "statusChanged", payload : {status : 'Attached Properties to Opportunity'}});
 });
 }
 </
