@@ -11,6 +11,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script 
+	src="https://cdnjs.cloudflare.com/ajax/libs/salesforce-canvas/27.0/canvas-all.js"></script>
 <title>Attach Properties</title>
 </head>
 <body>
@@ -30,9 +32,7 @@
 	<button onclick="callSendEvent()" class="btn btn-primary">Submit</button>
 
 </body>
-<script type="text/javascript"
-	src="https: //.salesforce.com
-	/canvas/sdk/js/36.0 /canvas-all.js">
+<script >
 	Sfdc.canvas(function() { // Save the token
 		Sfdc.canvas.oauth.token(window.signedRequestJson.oauthToken);
 		window
@@ -41,9 +41,17 @@
 
 	});
 </script>
-<script>
+<script >
 	function callSendEvent() {
-		alert("sample test");
+		Sfdc.canvas(function() {
+			sr = JSON.parse('<%=signedRequestJson%>');
+			Sfdc.canvas.client.publish(sr.client, {
+				name : "statusChanged",
+				payload : {
+					status : 'Attached Properties to Opportunity'
+				}
+			});
+		});
 	}
 </script>
 </html>
