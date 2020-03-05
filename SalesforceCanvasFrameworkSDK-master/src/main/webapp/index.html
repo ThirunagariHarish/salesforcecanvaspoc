@@ -32,7 +32,7 @@
 </body>
 <script type="text/javascript"
 	src="https: //.salesforce.com
-	/canvas/sdk/js/36.0 /canvas-all.js ">
+	/canvas/sdk/js/36.0 /canvas-all.js">
 	Sfdc.canvas(function() { // Save the token
 		Sfdc.canvas.oauth.token(window.signedRequestJson.oauthToken);
 		window
@@ -40,17 +40,10 @@
 						+ window.signedRequestJson.context.user.fullName);
 
 	});
-
+</script>
+<script>
 	function callSendEvent() {
-		Sfdc.canvas(function() {
-			sr = JSON.parse('<%=signedRequestJson%>');
-			Sfdc.canvas.client.publish(sr.client, {
-				name : "statusChanged",
-				payload : {
-					status : 'Attached Properties to Opportunity'
-				}
-			});
-		});
+		alert("sample test");
 	}
 </script>
 </html>
