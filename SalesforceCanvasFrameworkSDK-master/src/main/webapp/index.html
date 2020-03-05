@@ -3,18 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <title>Attach Properties</title>
-<style type="text/css" media="screen">
 <script type ="text/javascript" src ="https: //.salesforce.com
 	/canvas/sdk/js/36.0 /canvas-all.js ">
+
     Sfdc.canvas (function() { // Save the token
 	Sfdc.canvas.oauth.token(window.signedRequestJson.oauthToken);window
 	.alert("hello, " + window.signedRequestJson.context.user.fullName);
@@ -23,16 +15,13 @@
 );
 
 function callSendEvent() {
-Sfdc.canvas(function() {
-    sr = JSON.parse('<%=signedRequestJson%>');
-    Sfdc.canvas.client.publish(sr.client,
-        {name : "statusChanged", payload : {status : 'Attached Properties to Opportunity'}});
-});
-}
-</
-script
->
-</style>
+		Sfdc.canvas(function() {
+    			sr = JSON.parse('<%=signedRequestJson%>');
+    			Sfdc.canvas.client.publish(sr.client,
+        			{name : "statusChanged", payload : {status : 'Attached Properties to Opportunity'}});
+					});
+				}
+</script>
 </head>
 <body>
 
