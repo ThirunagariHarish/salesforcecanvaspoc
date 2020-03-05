@@ -33,16 +33,9 @@
 
 </body>
 <script >
-	function callSendEvent() {
-		
-			var srClient = signedRequest.client;
-			Sfdc.canvas.client.publish(srClient, {
-				name : "statusChanged",
-				payload : {
-					status : 'Attached Properties to Opportunity'
-				}
-			});
-	}
+Sfdc.canvas.onReady(function () {
+    console.log("Canvas application ready");
+});
 
 </script>
 </html>
