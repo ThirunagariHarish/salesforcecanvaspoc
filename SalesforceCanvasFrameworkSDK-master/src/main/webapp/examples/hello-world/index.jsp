@@ -43,8 +43,9 @@ This App must be invoked via a signed request!<%
 <script>  
     function callSendEvent() {
     	try {
-    		Sfdc.canvas(function() {Sfdc.canvas.controller.publish({name : 'mynamespace.message',
-    	                                payload : 'test message'});
+    		console.log(window);
+    		console.log(window.parent);
+    		window.parent.postMessage('Sending Message','*');
     		});
 		}
     	catch(err)
