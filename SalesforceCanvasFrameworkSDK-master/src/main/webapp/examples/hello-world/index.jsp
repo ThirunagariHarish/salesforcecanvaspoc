@@ -46,8 +46,8 @@ This App must be invoked via a signed request!<%
     		console.log(window);
     		console.log(window.parent);
     		window.parent.postMessage('Sending Message','*');
-    		});
-		}
+    		}
+	
     	catch(err)
     	{
     		console.log(err);
