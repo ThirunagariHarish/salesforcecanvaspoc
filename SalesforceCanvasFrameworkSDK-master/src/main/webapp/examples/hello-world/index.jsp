@@ -54,6 +54,16 @@
     		alert(err);
     	}
 	}
+    
+ // Subscribe to a custom event.
+    Sfdc.canvas(function() {
+        sr = JSON.parse('<%=signedRequestJson%>');
+        Sfdc.canvas.client.subscribe(sr.client,
+            {name : 'statusChanged', onData : function (event) {
+                console.log("Subscribed to custom event ", event);
+            }}
+        );
+    });
 </script>
 </head>
 <body>
