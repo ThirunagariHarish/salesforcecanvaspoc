@@ -45,7 +45,7 @@ This App must be invoked via a signed request!<%
 <script>  
     function callSendEvent() {
     	try {
-    		console.log(err);
+    		console.log("Sample test");
         Sfdc.canvas(function() {
    			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
