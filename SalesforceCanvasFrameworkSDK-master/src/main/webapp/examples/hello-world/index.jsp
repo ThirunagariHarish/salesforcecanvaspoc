@@ -35,6 +35,7 @@ This App must be invoked via a signed request!<%
        Sfdc.canvas(function() {
    			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
+			alert('published');
 			Sfdc.canvas.client.publish(sr.client, {
 				name : "statusChanged",
 				payload : {
