@@ -68,7 +68,7 @@ This App must be invoked via a signed request!<%
 </body>
 <script>
 	function callSendEvent() {
-		Sfdc.canvas(function() {
+	
 			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
 			Sfdc.canvas.client.publish(sr.client, {
@@ -77,7 +77,7 @@ This App must be invoked via a signed request!<%
 					status : 'Attached Properties to Opportunity'
 				}
 			});
-		});
+		
 	}
 </script>
 </html>
