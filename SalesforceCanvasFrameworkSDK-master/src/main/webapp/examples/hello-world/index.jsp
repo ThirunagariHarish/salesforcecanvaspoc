@@ -12,7 +12,6 @@
     //String yourConsumerSecret="1818663124211010887";
     String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
 %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -25,13 +24,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/salesforce-canvas/27.0/canvas-all.js"></script>
     <!-- Third part libraries, substitute with your own -->
     <script type="text/javascript" src="/scripts/json2.js"></script>
-
     <script>
         if (self === top) {
             // Not in Iframe
             alert("This canvas app must be included within an iframe");
         }
-
         Sfdc.canvas(function() {
             var sr = JSON.parse('<%=signedRequestJson%>');
             // Save the token
@@ -43,6 +40,33 @@
 </head>
 <body>
     <br/>
+    <div class="form-group">
+		<h1>Select Properties that need to be attached to the opportunity</h1>
+	</div>
+	<div class="form-group">
+		<label for="exampleFormControlSelect2">Example multiple select</label>
+		<select multiple class="form-control" id="exampleFormControlSelect2">
+			<option>Property 1</option>
+			<option>Property 2</option>
+			<option>Property 3</option>
+			<option>Property 4</option>
+			<option>Property 5</option>
+		</select>
+	</div>
+	<button onclick="callSendEvent()" class="btn btn-primary">Submit</button>
     <h1>Hello <span id='username'></span></h1>
 </body>
+<script >
+	function callSendEvent() {
+		Sfdc.canvas(function() {
+			sr = JSON.parse('<%=signedRequestJson%>');
+			Sfdc.canvas.client.publish(sr.client, {
+				name : "statusChanged",
+				payload : {
+					status : 'Attached Properties to Opportunity'
+				}
+			});
+		});
+	}
+</script>
 </html>
