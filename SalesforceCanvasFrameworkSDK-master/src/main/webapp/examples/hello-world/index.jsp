@@ -51,9 +51,9 @@ This App must be invoked via a signed request!<%
 			Sfdc.canvas.oauth.token(sr.oauthToken);
 			Sfdc.canvas.client.publish(sr.client, {
 				name : "c.statusChanged",
-			/*	payload : {
+				payload : {
 					status : 'Attached Properties to Opportunity'
-				}*/
+				}
 			});
 		});
     	}
