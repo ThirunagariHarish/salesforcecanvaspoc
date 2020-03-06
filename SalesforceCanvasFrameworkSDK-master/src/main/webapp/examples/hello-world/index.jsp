@@ -31,9 +31,8 @@ This App must be invoked via a signed request!<%
 	<!-- Include all the canvas JS dependencies in one file -->
 <!-- <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/salesforce-canvas/27.0/canvas-all.js"></script> -->
-	<script type="text/javascript"
-	src="/sdk/js/canvas-all.js"></script>
-<!-- Third part libraries, substitute with your own -->/sdk/js/
+	<script type="text/javascript" src="/sdk/js/canvas-all.js"></script>
+<!-- Third part libraries, substitute with your own -->
 <script type="text/javascript" src="/scripts/json2.js"></script>
 <script>
         if (self === top) {
