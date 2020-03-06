@@ -16,26 +16,25 @@ This App must be invoked via a signed request!<%
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-
 <title>Hello World Canvas Example</title>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<!-- Include all the canvas JS dependencies in one file -->
-	<script type="text/javascript"
-		src="https://cdn.jsdelivr.net/npm/@salesforce/canvas-js-sdk@1.41.0/js/canvas-all.js"></script>
+ <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css" />
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- Include all the canvas JS dependencies in one file -->
+<script type="text/javascript" src="/sdk/js/canvas-all.js"></script>
 <script type="text/javascript" src="/scripts/json2.js"></script>
 
-<script type="text/javascript">  
-        function callSendEvent() {
+<script>  
+    function callSendEvent() {
        Sfdc.canvas(function() {
-   			sr = JSON.parse('<%=signedRequestJson%>');
+   			sr = JSON.parse('<%=signedRequestJson%>
+	');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
 			Sfdc.canvas.client.publish(sr.client, {
 				name : "statusChanged",
@@ -48,21 +47,18 @@ This App must be invoked via a signed request!<%
 </script>
 </head>
 <body>
-	<br />
 	<div class="form-group">
 		<h1>Select Properties that need to be attached to the opportunity</h1>
 	</div>
 	<div class="form-group">
-		<label for="exampleFormControlSelect2">Example multiple select</label>
-		<select multiple class="form-control" id="exampleFormControlSelect2">
+		<select class="form-control" id="exampleFormControlSelect2">
 			<option>Property 1</option>
 			<option>Property 2</option>
 			<option>Property 3</option>
 			<option>Property 4</option>
 			<option>Property 5</option>
 		</select>
-	</div>
 	<button onclick="callSendEvent()" class="btn btn-primary">Attach</button>
+	</div>
 </body>
-
 </html>
