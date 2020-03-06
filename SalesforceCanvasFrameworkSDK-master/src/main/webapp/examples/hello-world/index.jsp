@@ -44,7 +44,8 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
         });
-        
+    </script>
+    <script type="text/javascript" defer="defer">  
         function callSendEvent() {
    			sr = JSON.parse('<%=signedRequestJson%>');
    			Sfdc.canvas.oauth.token(sr.oauthToken);
