@@ -45,7 +45,7 @@ This App must be invoked via a signed request!<%
 <script>  
     function callSendEvent() {
     	try {
-    		alert('Properties attached to Opportunity');
+    		console.log("Readched");
         Sfdc.canvas(function() {
    			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
@@ -59,7 +59,7 @@ This App must be invoked via a signed request!<%
     	}
     	catch(err)
     	{
-    		alert(err);
+    		console.log(err);
     	}
 	}
 </script>
