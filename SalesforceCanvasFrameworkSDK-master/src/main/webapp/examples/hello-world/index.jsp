@@ -17,8 +17,6 @@ This App must be invoked via a signed request!<%
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 <title>Hello World Canvas Example</title>
-
-
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
 <script
@@ -50,7 +48,7 @@ This App must be invoked via a signed request!<%
    			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
 			Sfdc.canvas.client.publish(sr.client, {
-				name : "statusChanged",
+				name : "myNameSpace.statusChanged",
 				payload : {
 					status : 'Attached Properties to Opportunity'
 				}
