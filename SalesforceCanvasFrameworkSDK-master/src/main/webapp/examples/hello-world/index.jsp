@@ -44,16 +44,7 @@ This App must be invoked via a signed request!<%
     function callSendEvent() {
     	try {
     		console.log("Sample test");
-        Sfdc.canvas(function() {
-   			sr = JSON.parse('<%=signedRequestJson%>');
-			Sfdc.canvas.oauth.token(sr.oauthToken);
-			Sfdc.canvas.client.publish(sr.client, {
-				name : "myNameSpace.statusChanged",
-				payload : {
-					status : 'Attached Properties to Opportunity'
-				}
-			});
-		});
+    		window.postMessage("Some message was sent from other domain message", "https://canvaspoc-cbre-dev-ed.lightning.force.com/");
     	}
     	catch(err)
     	{
