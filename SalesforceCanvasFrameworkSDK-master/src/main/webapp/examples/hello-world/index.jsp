@@ -29,9 +29,9 @@ This App must be invoked via a signed request!<%
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<!-- Include all the canvas JS dependencies in one file -->
-<!-- <script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/salesforce-canvas/27.0/canvas-all.js"></script> -->
-	<script type="text/javascript" src="/sdk/js/canvas-all.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/salesforce-canvas/27.0/canvas-all.js"></script> 
+	
 <!-- Third part libraries, substitute with your own -->
 <script type="text/javascript" src="/scripts/json2.js"></script>
 <script>
