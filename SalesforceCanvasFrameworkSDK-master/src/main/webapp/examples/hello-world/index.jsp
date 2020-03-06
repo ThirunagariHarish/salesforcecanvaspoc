@@ -44,6 +44,8 @@ This App must be invoked via a signed request!<%
     function callSendEvent() {
     	try {
     		console.log("Sample test");
+    		console.log(window);
+    		console.log(window.parent);
     		window.parent.postMessage("Some message was sent from other domain message","*");
     	}
     	catch(err)
