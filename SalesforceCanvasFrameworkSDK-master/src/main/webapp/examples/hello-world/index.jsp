@@ -44,17 +44,6 @@ This App must be invoked via a signed request!<%
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
         });
-    	Sfdc.canvas(function() {
-			sr = JSON.parse('<%=signedRequestJson%>');
-			Sfdc.canvas.oauth.token(sr.oauthToken);
-			Sfdc.canvas.client.publish(sr.client, {
-				name : "statusChanged",
-				payload : {
-					status : 'Attached Properties to Opportunity'
-				}
-			});
-		});
-
     </script>
 </head>
 <body>
@@ -80,8 +69,7 @@ This App must be invoked via a signed request!<%
 <script>
 	function callSendEvent() {
 		Sfdc.canvas(function() {
-			sr = JSON.parse('<%=signedRequestJson%>
-	');
+			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
 			Sfdc.canvas.client.publish(sr.client, {
 				name : "statusChanged",
