@@ -19,7 +19,6 @@ This App must be invoked via a signed request!<%
 
 <title>Hello World Canvas Example</title>
 
-<link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<script
@@ -29,25 +28,24 @@ This App must be invoked via a signed request!<%
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<!-- Include all the canvas JS dependencies in one file -->
-<script 
-	src="https://cdn.jsdelivr.net/npm/@salesforce/canvas-js-sdk@1.41.0/js/canvas-all.js"></script> 
-	
-<!-- Third part libraries, substitute with your own -->
+	<script type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/@salesforce/canvas-js-sdk@1.41.0/js/canvas-all.js"></script>
 <script type="text/javascript" src="/scripts/json2.js"></script>
-    <script type="text/javascript" defer="defer">  
+
+<script type="text/javascript">  
         function callSendEvent() {
        Sfdc.canvas(function() {
    			sr = JSON.parse('<%=signedRequestJson%>');
-   			Sfdc.canvas.oauth.token(sr.oauthToken);
-   			Sfdc.canvas.client.publish(sr.client, {
-   				name : "statusChanged",
-   				payload : {
-   					status : 'Attached Properties to Opportunity'
-   				}
-   			});		
-        	 });	
-   	}
-    </script>
+			Sfdc.canvas.oauth.token(sr.oauthToken);
+			Sfdc.canvas.client.publish(sr.client, {
+				name : "statusChanged",
+				payload : {
+					status : 'Attached Properties to Opportunity'
+				}
+			});
+		});
+	}
+</script>
 </head>
 <body>
 	<br />
@@ -64,7 +62,7 @@ This App must be invoked via a signed request!<%
 			<option>Property 5</option>
 		</select>
 	</div>
-	<button onclick="callSendEvent()" class="btn btn-primary">Submit</button>
+	<button onclick="callSendEvent()" class="btn btn-primary">Attach</button>
 </body>
 
 </html>
