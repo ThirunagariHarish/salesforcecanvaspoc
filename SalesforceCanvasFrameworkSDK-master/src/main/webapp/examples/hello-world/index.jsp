@@ -26,12 +26,12 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <!-- Include all the canvas JS dependencies in one file -->
-<script type="text/javascript" src="/sdk/js/canvas.js"></script>
-<script type="text/javascript" src="/sdk/js/cookies.js"></script>
-<script type="text/javascript" src="/sdk/js/oauth.js"></script>
-<script type="text/javascript" src="/sdk/js/xd.js"></script>
-<script type="text/javascript" src="/sdk/js/client.js"></script>
-<script type="text/javascript" src="/scripts/json2.js"></script>
+<script type="text/javascript" src="https://canvaspoctest.herokuapp.com/sdk/js/canvas.js"></script>
+<script type="text/javascript" src="https://canvaspoctest.herokuapp.com/sdk/js/cookies.js"></script>
+<script type="text/javascript" src="https://canvaspoctest.herokuapp.com/sdk/js/oauth.js"></script>
+<script type="text/javascript" src="https://canvaspoctest.herokuapp.com/sdk/js/xd.js"></script>
+<script type="text/javascript" src="https://canvaspoctest.herokuapp.com/sdk/js/client.js"></script>
+<script type="text/javascript" src="https://canvaspoctest.herokuapp.com/scripts/json2.js"></script>
 
 
 <script>  
