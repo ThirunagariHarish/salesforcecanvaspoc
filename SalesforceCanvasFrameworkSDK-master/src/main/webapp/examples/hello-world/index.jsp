@@ -36,6 +36,7 @@
 
 <script>  
     function callSendEvent() {
+    	try {
        Sfdc.canvas(function() {
     		alert('published');
    			sr = JSON.parse('<%=signedRequestJson%>');
@@ -47,6 +48,11 @@
 				}
 			});
 		});
+    	}
+    	catch(err)
+    	{
+    		alert(err);
+    	}
 	}
 </script>
 </head>
