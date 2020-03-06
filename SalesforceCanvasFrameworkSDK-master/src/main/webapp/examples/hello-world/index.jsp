@@ -45,15 +45,15 @@ This App must be invoked via a signed request!<%
 <script>  
     function callSendEvent() {
     	try {
-    		console.log("Readched");
+    		console.log(err);
         Sfdc.canvas(function() {
    			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
 			Sfdc.canvas.client.publish(sr.client, {
 				name : "c.statusChanged",
-				payload : {
+			/*	payload : {
 					status : 'Attached Properties to Opportunity'
-				}
+				}*/
 			});
 		});
     	}
