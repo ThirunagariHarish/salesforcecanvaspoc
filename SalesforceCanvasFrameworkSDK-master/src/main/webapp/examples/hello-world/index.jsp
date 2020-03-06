@@ -29,9 +29,11 @@ This App must be invoked via a signed request!<%
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<!-- Include all the canvas JS dependencies in one file -->
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/salesforce-canvas/27.0/canvas-all.js"></script>
-<!-- Third part libraries, substitute with your own -->
+<!-- <script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/salesforce-canvas/27.0/canvas-all.js"></script> -->
+	<script type="text/javascript"
+	src="/sdk/js/canvas-all.js"></script>
+<!-- Third part libraries, substitute with your own -->/sdk/js/
 <script type="text/javascript" src="/scripts/json2.js"></script>
 <script>
         if (self === top) {
@@ -74,9 +76,6 @@ This App must be invoked via a signed request!<%
 		</select>
 	</div>
 	<button onclick="callSendEvent()" class="btn btn-primary">Submit</button>
-	<h1>
-		Hello <span id='username'></span>
-	</h1>
 </body>
 
 </html>
