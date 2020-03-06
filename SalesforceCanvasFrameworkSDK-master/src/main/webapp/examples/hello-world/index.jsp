@@ -50,7 +50,7 @@ This App must be invoked via a signed request!<%
    			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
 			Sfdc.canvas.client.publish(sr.client, {
-				name : "c.statusChanged",
+				name : "statusChanged",
 				payload : {
 					status : 'Attached Properties to Opportunity'
 				}
