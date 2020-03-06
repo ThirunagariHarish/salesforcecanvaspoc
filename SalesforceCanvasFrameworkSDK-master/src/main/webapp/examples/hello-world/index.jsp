@@ -58,6 +58,8 @@ This App must be invoked via a signed request!<%
 			<option>Property 4</option>
 			<option>Property 5</option>
 		</select>
+	</div>
+	<div>
 	<button onclick="callSendEvent()" class="btn btn-primary">Attach</button>
 	</div>
 </body>
