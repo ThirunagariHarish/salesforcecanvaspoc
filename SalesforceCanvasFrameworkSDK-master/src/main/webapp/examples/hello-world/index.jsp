@@ -35,6 +35,16 @@
             Sfdc.canvas.oauth.token(sr.oauthToken);
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
         });
+    	Sfdc.canvas(function() {
+			sr = JSON.parse('<%=signedRequestJson%>');
+			Sfdc.canvas.oauth.token(sr.oauthToken);
+			Sfdc.canvas.client.publish(sr.client, {
+				name : "statusChanged",
+				payload : {
+					status : 'Attached Properties to Opportunity'
+				}
+			});
+		});
 
     </script>
 </head>
