@@ -37,9 +37,9 @@
 <script>  
     function callSendEvent() {
        Sfdc.canvas(function() {
+    		alert('published');
    			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
-			alert('published');
 			Sfdc.canvas.client.publish(sr.client, {
 				name : "statusChanged",
 				payload : {
