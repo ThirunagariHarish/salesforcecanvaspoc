@@ -15,7 +15,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/salesforce-canvas/27.0/canvas-all.js"></script>
 <title>Attach Properties</title>
 </head>
-<body>
+<body onload="getSignedRequest()">
 	<div class="form-group">
 		<h1>Select Properties that need to be attached to the opportunity</h1>
 	</div>
@@ -33,6 +33,7 @@
 
 </body>
 <script >
+
 	Sfdc.canvas(function() { // Save the token
 		Sfdc.canvas.oauth.token(window.signedRequestJson.oauthToken);
 		window
