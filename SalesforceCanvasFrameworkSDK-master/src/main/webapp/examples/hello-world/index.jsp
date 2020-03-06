@@ -34,17 +34,6 @@ This App must be invoked via a signed request!<%
 	
 <!-- Third part libraries, substitute with your own -->
 <script type="text/javascript" src="/scripts/json2.js"></script>
-<script>
-        if (self === top) {
-            // Not in Iframe
-            alert("This canvas app must be included within an iframe");
-        }
-        Sfdc.canvas(function() {
-            var sr = JSON.parse('<%=signedRequestJson%>');
-            // Save the token
-            Sfdc.canvas.oauth.token(sr.oauthToken);
-        });
-    </script>
     <script type="text/javascript" defer="defer">  
         function callSendEvent() {
        Sfdc.canvas(function() {
