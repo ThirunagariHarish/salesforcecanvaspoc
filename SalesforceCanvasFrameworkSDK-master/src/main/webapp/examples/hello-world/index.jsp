@@ -44,10 +44,10 @@ This App must be invoked via a signed request!<%
     function callSendEvent() {
     	try {
     		console.log("Sample test");
-    		console.log(window);
-    		console.log(window.parent);
-    		window.parent.postMessage("Some message was sent from other domain message","*");
-    	}
+    		Sfdc.canvas(function() {Sfdc.canvas.controller.publish({name : 'mynamespace.message',
+    	                                payload : 'test message'});
+    		});
+		}
     	catch(err)
     	{
     		console.log(err);
