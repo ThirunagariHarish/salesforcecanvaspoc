@@ -37,8 +37,8 @@
 <script>  
     function callSendEvent() {
     	try {
+    		alert('Properties attached to Opportunity');
        Sfdc.canvas(function() {
-    		alert('published');
    			sr = JSON.parse('<%=signedRequestJson%>');
 			Sfdc.canvas.oauth.token(sr.oauthToken);
 			Sfdc.canvas.client.publish(sr.client, {
