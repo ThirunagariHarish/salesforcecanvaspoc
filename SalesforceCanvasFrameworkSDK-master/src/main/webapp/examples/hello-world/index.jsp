@@ -62,11 +62,11 @@ This App must be invoked via a signed request!<%
 	</div>
 	<div class="form-group">
 		<select multiple class="form-control" id="selectProperties">
-			<option value="property 1">Property 1</option>
-			<option value="property 2">Property 2</option>
-			<option value="property 3">Property 3</option>
-			<option value="property 4">Property 4</option>
-			<option value="property 5">Property 5</option>
+			<option value="Property 1">Property 1</option>
+			<option value="Property 2">Property 2</option>
+			<option value="Property 3">Property 3</option>
+			<option value="Property 4">Property 4</option>
+			<option value="Property 5">Property 5</option>
 		</select>
 	</div>
 	<div>
