@@ -42,6 +42,7 @@ This App must be invoked via a signed request!<%
 
 <script>  
     function callSendEvent() {
+    	var selectedValues = $('#selectProperties').val();
     	try {
     		sr = JSON.parse('<%=signedRequestJson%>');
     		Sfdc.canvas.client.publish(sr.client,{
@@ -60,12 +61,12 @@ This App must be invoked via a signed request!<%
 		<h1>Select Properties that need to be attached to the opportunity</h1>
 	</div>
 	<div class="form-group">
-		<select multiple class="form-control" id="exampleFormControlSelect2">
-			<option>Property 1</option>
-			<option>Property 2</option>
-			<option>Property 3</option>
-			<option>Property 4</option>
-			<option>Property 5</option>
+		<select multiple class="form-control" id="selectProperties">
+			<option value="property 1">Property 1</option>
+			<option value="property 2">Property 2</option>
+			<option value="property 3">Property 3</option>
+			<option value="property 4">Property 4</option>
+			<option value="property 5">Property 5</option>
 		</select>
 	</div>
 	<div>
