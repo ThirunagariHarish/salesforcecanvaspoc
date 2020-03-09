@@ -43,10 +43,10 @@ This App must be invoked via a signed request!<%
 <script>  
     function callSendEvent() {
     	try {
-    	
-    		Sfdc.canvas(function() {Sfdc.canvas.client.publish({name : 'mynamespace.message',
-    	                                payload : 'test message'});
-    		});
+    		sr = JSON.parse('<%=signedRequestJson%>');
+    		Sfdc.canvas.client.publish(sr.client,{
+    			name : 'mynamespace.message',
+    			payload : {value:'test message'} });
 		}
     	catch(err)
     	{
