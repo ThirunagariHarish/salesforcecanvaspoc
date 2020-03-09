@@ -46,7 +46,7 @@ This App must be invoked via a signed request!<%
     		sr = JSON.parse('<%=signedRequestJson%>');
     		Sfdc.canvas.client.publish(sr.client,{
     			name : 'mynamespace.message',
-    			payload : {value:'test message'} });
+    			payload : {value:'Attached Properties to Opportunity'} });
 		}
     	catch(err)
     	{
