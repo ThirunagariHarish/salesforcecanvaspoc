@@ -40,7 +40,8 @@ This App must be invoked via a signed request!<%
 	src="https://canvaspoctest.herokuapp.com/scripts/json2.js"></script>
 
 
-<script>  
+<script>
+function load(){
 var masterProperties = ["Property 1", "Property 2", "Property 3","Property 4", "Property 5", "Property 6"];
 sr = JSON.parse('<%=signedRequestJson%>');
 var existingValues =sr.context.environment.parameters.existingProperty;
@@ -52,6 +53,7 @@ for (var i = 0; i < diff.length; i++){
   element.innerText = item;
   var selectElem = document.getElementById("selectProperties");
   selectElem.append(element);
+}
 }
     function callSendEvent() {  
     	var selectedValues = $('#selectProperties').val();
@@ -68,7 +70,7 @@ for (var i = 0; i < diff.length; i++){
 	}
 </script>
 </head>
-<body>
+<body onload="load()">
 	<div class="form-group">
 		<h1>Select Properties that need to be attached to the opportunity</h1>
 	</div>
