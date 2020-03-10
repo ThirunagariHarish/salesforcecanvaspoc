@@ -41,10 +41,14 @@ This App must be invoked via a signed request!<%
 
 
 <script>  
+
+
     function callSendEvent() {
+    
     	var selectedValues = $('#selectProperties').val();
     	try {
     		sr = JSON.parse('<%=signedRequestJson%>');
+    		var existingValues =sr.context.environment.parameters.existingProperty;
     		Sfdc.canvas.client.publish(sr.client,{
     			name : 'mynamespace.message',
     			payload : {value:selectedValues} });
