@@ -53,8 +53,7 @@ for (var i = 0; i < diff.length; i++){
   var selectElem = document.getElementById("selectProperties");
   selectElem.append(element);
 }
-    function callSendEvent() {
-    
+    function callSendEvent() {  
     	var selectedValues = $('#selectProperties').val();
     	try {
     		sr = JSON.parse('<%=signedRequestJson%>');	
@@ -75,7 +74,6 @@ for (var i = 0; i < diff.length; i++){
 	</div>
 	<div class="form-group">
 		<select multiple class="form-control" id="selectProperties">
-		
 		</select>
 	</div>
 	<div>
