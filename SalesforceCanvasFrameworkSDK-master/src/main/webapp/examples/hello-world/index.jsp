@@ -41,14 +41,23 @@ This App must be invoked via a signed request!<%
 
 
 <script>  
-
-
+var masterProperties = ["Property 1", "Property 2", "Property 3","Property 4", "Property 5", "Property 6"];
+sr = JSON.parse('<%=signedRequestJson%>');
+var existingValues =sr.context.environment.parameters.existingProperty;
+var attachedProperties =  existingValues.split(",");
+var diff = $(masterProperties).not(attachedProperties).get();
+for (var i = 0; i < diff.length; i++){
+  var item = diff[i];
+  var element = document.createElement("option");
+  element.innerText = item;
+  var selectElem = document.getElementById("selectProperties");
+  selectElem.append(element);
+}
     function callSendEvent() {
     
     	var selectedValues = $('#selectProperties').val();
     	try {
-    		sr = JSON.parse('<%=signedRequestJson%>');
-    		var existingValues =sr.context.environment.parameters.existingProperty;
+    		sr = JSON.parse('<%=signedRequestJson%>');	
     		Sfdc.canvas.client.publish(sr.client,{
     			name : 'mynamespace.message',
     			payload : {value:selectedValues} });
@@ -66,11 +75,7 @@ This App must be invoked via a signed request!<%
 	</div>
 	<div class="form-group">
 		<select multiple class="form-control" id="selectProperties">
-			<option value="Property 1">Property 1</option>
-			<option value="Property 2">Property 2</option>
-			<option value="Property 3">Property 3</option>
-			<option value="Property 4">Property 4</option>
-			<option value="Property 5">Property 5</option>
+		
 		</select>
 	</div>
 	<div>
